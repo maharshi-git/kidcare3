@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+.purplebackground{
+  background-color: blue;
+}
+
+.formClass{
+  margin: 20%;
+}
+
+.smallMargin{
+  margin: 1rem;
+}
+
+.MediumMargin{
+  margin: 5rem;
+}
+
+.appButtonPurple{
+  background-color: blueviolet !important;
+  width: 10rem;
+  align-self: center;
+  align-items: center;
+}
+
+.transparentBtn{
+  background-color: transparent;
+  border: none;
+  color: blueviolet;
+}
+
+.dragdroparea{
+  height: 10rem;
+  width: 90%;
+  /* margin: 5rem; */
+  border: rgb(225, 225, 225) dotted;
+  border-radius: 1rem;
+  border-width: 0.3rem;
+  text-align: center;
+}
+
+.file-inputs{
+  text-align: center
+}
+
+.navbarButton{
+  text-align: end;
+}
+
+.navBarStyle{
+  background-color: blueviolet !important;
+}
