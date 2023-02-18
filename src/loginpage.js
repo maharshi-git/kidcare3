@@ -14,11 +14,7 @@ const LoginPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(`Username: ${username} Password: ${password}`);
 
-  };
 
   let navigate = useNavigate()
 
@@ -50,7 +46,7 @@ const LoginPage = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button onClick={handleSubmit} type="submit" className="btn btn-success smallMargin appButtonPurple" onClick={() => {navigate('/VaccineDet') }}>Login</button>
+        <button  type="submit" className="btn btn-success smallMargin appButtonPurple" onClick={() => {navigate('/VaccineDet') }}>Login</button>
         <div className="smallMargin">
           <p>New user?  <button className="transparentBtn" onClick={() => {navigate('/Register') }}>Register</button></p>
 

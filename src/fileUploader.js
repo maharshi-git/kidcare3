@@ -29,11 +29,6 @@ function FileUploader() {
 
     };
 
-    const checkDisabled = () => {
-        var test = (selectedFiles.length === 0) ? true : false;
-        return test;
-    }
-
     return (
         <div
             className="file-uploader"

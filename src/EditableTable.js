@@ -8,11 +8,6 @@ const EditableTable = () => {
   ]);
   const [newVaccine, setNewVaccine] = useState({ name: '', administered: '', due: '', done: false });
 
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setNewVaccine({ ...newVaccine, [name]: value });
-  };
-
   const handleAddVaccine = (event) => {
     event.preventDefault();
     setVaccines([...vaccines, newVaccine]);
