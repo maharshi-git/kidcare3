@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 // import EditableList from './editableList';
 // import TabBar from './dataAccordion';
 
 function FileUploader() {
 
+    const location = useLocation();
+    let data = location.state;
+
+
     let navigate = useNavigate();
     const [selectedFiles, setSelectedFiles] = useState([]);
+   
 
     const handleDrop = (event) => {
         event.preventDefault();
@@ -25,9 +31,19 @@ function FileUploader() {
         // You can use a library like Axios or fetch to upload the files to a server
         // or use a cloud storage service like AWS S3 or Azure Blob Storage
         // console.log(selectedFiles);
-        navigate('/Login')
+        data.uploadSelected = true
+        navigate('/VaccineDet', { "state": data })
+        // navigate.push({
+        //     pathname: "/VaccineDet",
+        //     state: { data: dataToPass },
+        //   });
 
     };
+
+    const onBackToVaccDet = () => {
+        
+        navigate('/VaccineDet', { "state": data })
+    }
 
     return (
         <div
@@ -47,7 +63,7 @@ function FileUploader() {
                     multiple
                     onChange={handleFileSelect}
                     className='custom-file-input'
-                    style={{"marginTop": "3.5rem"}}
+                    style={{ "marginTop": "3.5rem" }}
                 />
             </div>
             {/* <h2>File Uploader</h2> */}
@@ -62,10 +78,9 @@ function FileUploader() {
             <div className="file-inputs MediumMargin">
                 {/* <label htmlFor="file-select" className='smallMargin'>Browse</label> */}
 
-                <button  disabled={selectedFiles.length===0} onClick={handleUpload} className='btn btn-success smallMargin appButtonPurple'>Upload</button>
+                <button disabled={selectedFiles.length === 0} onClick={handleUpload} className='btn btn-success smallMargin appButtonPurple'>Upload</button>
             </div>
-
-            {/* <TabBar></TabBar> */}
+            <a onClick={onBackToVaccDet} href="/#">Back</a>
 
         </div>
     );

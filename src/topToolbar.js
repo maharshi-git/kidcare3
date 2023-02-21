@@ -24,7 +24,7 @@ const TopNavbar = () => {
         <Nav.Link href="#">Contact</Nav.Link>
       </Nav>
       <Nav>
-        {(location.pathname === '/') && <Button variant="primary" href="./Login" style={{"width": "13rem"}} className='btn btn-success smallMargin appButtonPurple'>Sign In</Button>}
+        {(location.pathname !== '/Login') && <Button variant="primary" href="./Login" style={{"width": "6rem"}} className='btn btn-success smallMargin appButtonPurple'>Sign In</Button>}
       </Nav>
     </Navbar>
   );

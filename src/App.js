@@ -4,6 +4,7 @@ import RegisterPage from './Registerpage';
 import FileUploaderMod from './fileUploader';
 import TopToolbar from './topToolbar';
 import TabBar from './dataAccordion';
+import AddChild from './AddChild';
 import { BrowserRouter as Router, Routes, Route  } from 'react-router-dom';
 
 
@@ -20,8 +21,9 @@ const App = () => {
 
           <Routes>
             <Route exact path="/Login" element={<LoginPage />} />
+            <Route exact path="/" element={<AddChild />} />
             <Route path="/Register" element={<RegisterPage />} />
-            <Route path="/" element={<FileUploaderMod />} />
+            <Route path="/FileUploader" element={<FileUploaderMod />} />
             <Route path="/VaccineDet" element={ <TabBar></TabBar>} />
 
           </Routes>

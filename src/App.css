@@ -40,3 +40,23 @@
 .navbarSpace{
   width: "80%";
 }
+
+
+.tileStyle{
+  width: 15rem;
+  height: 15rem;
+  background-color: #f8f1ff;
+  box-shadow: #282c34;
+  /* background-image: url(./resources/boy.png);
+  background-image:; */
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin-icon {
+  animation: spin 1s infinite linear;
+}
