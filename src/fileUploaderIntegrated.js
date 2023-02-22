@@ -20,6 +20,8 @@ const ImageUploader = () => {
         reader.onload = () => {
             setPreviewUrl(reader.result);
         };
+
+        console.log(selectedFile);
     };
 
     const handleDrop = (event) => {
