@@ -9,6 +9,7 @@ import VaccineDetail from './resources/vaccineDetail.json'
 // import { VaccineZeroToSix, VaccineSixMToOneY } from './editableList';
 
 import EditableTable from './EditableTable'
+import FileUploader from './fileUploaderIntegrated'
 
 
 function FourTabBars({ tabs }) {
@@ -50,7 +51,7 @@ function FourTabBars({ tabs }) {
               <div className="tileStyle text-light p-4" style={{"width": "100%", "height": "8rem", "display": "flex"}}>
                 <img src={BoyImageTile} style={{ "width": "5rem", "height": "5rem" }} alt=""></img>
                 <p style={{ "color": "Black", "margin": "1rem" }}>{data.name} <br></br> {data.DOB}</p>
-
+                <FileUploader></FileUploader>
               </div>
             
 

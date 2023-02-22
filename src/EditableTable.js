@@ -71,8 +71,7 @@ const EditableTable = ({ vaccData, DOB }) => {
         <tbody>
           {vaccines.map((vaccine, index) => (
             <tr key={index}>
-              <td>{vaccine.VaccineName}</td>
-              <td>{vaccine.PreventAgnst}</td>
+              <td><div ></div>{vaccine.PreventAgnst}</td>
               <td>{addDate(DOB, vaccine.adminDateStart)}</td>
               {/* <td>{vaccine.administered}</td>           */}
               <td>

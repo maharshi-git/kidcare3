@@ -43,8 +43,8 @@ code {
 }
 
 .dragdroparea{
-  height: 10rem;
-  width: 90%;
+  height: 5rem;
+  width: 20rem;
   /* margin: 5rem; */
   border: rgb(225, 225, 225) dotted;
   border-radius: 1rem;

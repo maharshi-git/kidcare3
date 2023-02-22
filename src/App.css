@@ -60,3 +60,16 @@
 .spin-icon {
   animation: spin 1s infinite linear;
 }
+
+.fileUploaderBtn{
+  border-radius: 1rem;
+  background-color: white;
+  color: Black;
+  width: 15rem
+}
+.fileUploaderBtn::file-selector-button{
+  border-radius: 1rem;
+  border: none;
+  background-color: blueviolet;
+  color: white
+}

@@ -37,9 +37,6 @@ function SquareTiles() {
 
   return (
     <Container>
-
-
-
       <Row>
         {tiles.map((tile, index) => (
           <Col key={index} className="p-2">
