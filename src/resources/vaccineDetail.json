@@ -1,0 +1,57 @@
+{
+    "vaccine0To6Mnth": [
+        {
+            "VaccineName": "BCG",
+            "PreventAgnst": "Tuberculosis",
+            "adminDateStart": 0,
+            "adminDateEnd": 0,
+            "sideEffect": "1) soreness or discharge where the injection was given.\n 2) high temperature (fever) \n 3) headache. \n 4) swollen glands under the armpit in the arm where the injection was given.",
+            "admnstDate": ""
+        },
+        {
+            "VaccineName": "Hepatitis B - Birth dose",
+            "PreventAgnst": "Hepatitis B",
+            "adminDateStart": 1,
+            "adminDateEnd": 0,
+            "sideEffect": "Aches or pain in the joints, fever, or skin rash or welts (may occur days or weeks after receiving the vaccine) \n blurred vision or other vision changes. \n difficulty with breathing or swallowing. \n itching, especially of the feet or hands. \n muscle weakness. \n numbness or tingling of the arms and legs.",
+            "admnstDate": ""
+        },
+        {
+            "VaccineName": "OPV-0",
+            "PreventAgnst": "Polio",
+            "adminDateStart": 15,
+            "adminDateEnd": 0,
+            "sideEffect": "fever, irritability, malaise, and non-specific symptoms, such as diarrhea, headache, and/or muscle pain.",
+            "admnstDate": ""
+        }
+    ],
+    "vaccine6To12Mnth": [
+        {
+            "VaccineName": "Measles /MR 1st Dose",
+            "PreventAgnst": "Measles",
+            "adminDateStart": 252,
+            "adminDateEnd": 0,
+            "sideEffect": "mild pain and redness at the injection site, low-grade fever, rash and muscle aches",
+            "admnstDate": ""
+        },
+        {
+            "VaccineName": "JE - 1",
+            "PreventAgnst": "Japanese encephalitis",
+            "adminDateStart": 15,
+            "adminDateEnd": 0,
+            "sideEffect": "Pain, tenderness, redness, or swelling where the shot was given are common after JE vaccine.",
+            "admnstDate": ""
+        },
+        {
+            "VaccineName": "Vitamin A (1st dose)",
+            "PreventAgnst": "measles",
+            "adminDateStart": 252,
+            "adminDateEnd": 0,
+            "sideEffect": "irritability, sleepiness, diarrhea",
+            "admnstDate": ""
+        }
+    ],
+    "vaccine12To24Mnth": [],
+    "vaccine24To5Yr": [],
+    "vaccine5YrTo516Yr": []
+}
