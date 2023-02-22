@@ -23,8 +23,8 @@ jobs:
 
       - name: npm install, build, and test
         run: |
-          npm install --force
-          npm run build --force
+          npm install --legacy-peer-deps
+          npm run build --legacy-peer-deps
           npm run test --if-present
       
       - name: Upload artifact for deployment job
