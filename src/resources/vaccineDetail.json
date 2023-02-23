@@ -41,6 +41,22 @@
             "admnstDate": ""
         },
         {
+            "VaccineName": "Rotavirus",
+            "PreventAgnst": "Rotavirus",
+            "adminDateStart": 42,
+            "adminDateEnd": 0,
+            "sideEffect": "Irritability or mild, temporary diarrhea or vomiting",
+            "admnstDate": ""
+        },
+        {
+            "VaccineName": "IPV",
+            "PreventAgnst": "Polio",
+            "adminDateStart": 42,
+            "adminDateEnd": 0,
+            "sideEffect": "fever and soreness or redness at the site of the injection",
+            "admnstDate": ""
+        },
+        {
             "VaccineName": "OPV-2",
             "PreventAgnst": "Polio",
             "adminDateStart": 70,
@@ -54,14 +70,6 @@
             "adminDateStart": 70,
             "adminDateEnd": 0,
             "sideEffect": "tenderness and/or swelling at the injection site. raised temperature (fever) irritability. sickness. diarrhoea. loss of appetite.",
-            "admnstDate": ""
-        },
-        {
-            "VaccineName": "OPV-3",
-            "PreventAgnst": "Polio",
-            "adminDateStart": 70,
-            "adminDateEnd": 0,
-            "sideEffect": "fever, irritability, malaise, and non-specific symptoms, such as diarrhea, headache, and/or muscle pain.",
             "admnstDate": ""
         },
         {
@@ -93,7 +101,7 @@
         {
             "VaccineName": "JE - 1",
             "PreventAgnst": "Japanese encephalitis",
-            "adminDateStart": 15,
+            "adminDateStart": 252,
             "adminDateEnd": 0,
             "sideEffect": "Pain, tenderness, redness, or swelling where the shot was given are common after JE vaccine.",
             "admnstDate": ""
@@ -156,6 +164,14 @@
             "adminDateStart": 1825,
             "adminDateEnd": 0,
             "sideEffect": "Soreness or swelling where the shot was given, fever, fussiness, feeling tired, loss of appetite, and vomiting sometimes happen after DTaP vaccination.",
+            "admnstDate": ""
+        },
+        {
+            "VaccineName": "TT",
+            "PreventAgnst": "Tetanus",
+            "adminDateStart": 1825,
+            "adminDateEnd": 0,
+            "sideEffect": "Confusion. convulsions (seizures) fever over 103 °F (39.4 °C) headache (severe or continuing) sleepiness (excessive) swelling, blistering, or pain at place of injection (severe or continuing) swelling of glands in armpit. unusual irritability.",
             "admnstDate": ""
         }
     ]
