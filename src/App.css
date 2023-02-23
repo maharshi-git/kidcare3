@@ -73,3 +73,9 @@
   background-color: blueviolet;
   color: white
 }
+
+.scroll-container {
+  height: 440px; /* set the height of the container */
+  width: 100%; /* set the width of the container */
+  overflow-y: scroll; /* enable vertical scrolling */
+}

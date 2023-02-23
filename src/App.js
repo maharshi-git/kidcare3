@@ -10,11 +10,8 @@ import { BrowserRouter as Router, Routes, Route  } from 'react-router-dom';
 
 const App = () => {
 
-  
-
   return (
-    <>
-      
+    <>      
       <Router>
       <TopToolbar></TopToolbar>
         <div className="App" style={{ backgroundImage: "url(./circle.jpg)" }}>
@@ -25,7 +22,6 @@ const App = () => {
             <Route path="/Register" element={<RegisterPage />} />
             <Route path="/FileUploader" element={<FileUploaderMod />} />
             <Route path="/VaccineDet" element={ <TabBar></TabBar>} />
-
           </Routes>
         </div>
 
