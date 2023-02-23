@@ -23,19 +23,19 @@ function FourTabBars({ tabs }) {
     const navigate = useNavigate();
 
     //figure out which tab to land on.- util function
-    let DOBDateFormat =  new Date(data.DOB);
+    let DOBDateFormat = new Date(data.DOB);
     let Today = new Date();
     let timeDiff = Today.getTime() - DOBDateFormat.getTime();
-    let age =  Math.floor(timeDiff / (1000 * 60 * 60 * 24))
+    let age = Math.floor(timeDiff / (1000 * 60 * 60 * 24))
     console.log(age);
     let tabNumber;
-    if(age < 183){
+    if (age < 183) {
         tabNumber = 0;
-    }else if(age < 365){
-        tabNumber=  1
-    }else if(age < 2190){
+    } else if (age < 365) {
+        tabNumber = 1
+    } else if (age < 2190) {
         tabNumber = 2
-    }else{
+    } else {
         tabNumber = 3
     }
 
@@ -49,11 +49,11 @@ function FourTabBars({ tabs }) {
 
     ]
 
-    
+
 
     const handleSaveVaccDet = () => {
         navigate("../Login")
-      }
+    }
 
 
     const handleSelect = (selectedIndex) => {
@@ -64,9 +64,12 @@ function FourTabBars({ tabs }) {
     //     navigate("../FileUploader", { "state": data })
     // }
 
+    const styleScroll = { width: "100%", height: "8rem", display: "flex", 
+    overflow: (navigator.userAgent.indexOf("Windows") > 0) ? "hidden" : "scroll" }
+
     return (
         <>
-            <div className="tileStyle text-light p-4" style={{ "width": "100%", "height": "8rem", "display": "flex" }}>
+            <div className="tileStyle text-light p-4" style={styleScroll}>
                 <img src={BoyImageTile} style={{ "width": "5rem", "height": "5rem" }} alt=""></img>
                 <p style={{ "color": "Black", "margin": "1rem" }}>{data.name} <br></br> {data.DOB}</p>
                 <FileUploader></FileUploader>
