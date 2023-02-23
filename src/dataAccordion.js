@@ -22,15 +22,34 @@ function FourTabBars({ tabs }) {
     const data = location.state;
     const navigate = useNavigate();
 
-    // let uploadSelected = (data.uploadSelected) ? true : false;
-    const [activeTab, setActiveTab] = useState(0);
+    //figure out which tab to land on.- util function
+    let DOBDateFormat =  new Date(data.DOB);
+    let Today = new Date();
+    let timeDiff = Today.getTime() - DOBDateFormat.getTime();
+    let age =  Math.floor(timeDiff / (1000 * 60 * 60 * 24))
+    console.log(age);
+    let tabNumber;
+    if(age < 183){
+        tabNumber = 0;
+    }else if(age < 365){
+        tabNumber=  1
+    }else if(age < 2190){
+        tabNumber = 2
+    }else{
+        tabNumber = 3
+    }
 
-    tabs = [{ "title": "0 - 6 Months", "content": <EditableTable vaccData={vacc0To6Mnth} DOB={data.DOB}></EditableTable> },
-    { "title": "6 - 12 Months", "content": <EditableTable vaccData={vaccine6To12Mnth} DOB={data.DOB}></EditableTable> },
-    { "title": "1 year to 6 years", "content": <EditableTable vaccData={vaccine1YearTo5Years} DOB={data.DOB}></EditableTable> },
-    { "title": "6 years +", "content": <EditableTable vaccData={vaccine6YearsPlus} DOB={data.DOB}></EditableTable> }
+    // let uploadSelected = (data.uploadSelected) ? true : false;
+    const [activeTab, setActiveTab] = useState(tabNumber);
+
+    tabs = [{ "title": "0 - 6 Months", "content": <EditableTable vaccData={vacc0To6Mnth} age={age} DOB={data.DOB}></EditableTable> },
+    { "title": "6 - 12 Months", "content": <EditableTable vaccData={vaccine6To12Mnth} age={age} DOB={data.DOB}></EditableTable> },
+    { "title": "1 year to 6 years", "content": <EditableTable vaccData={vaccine1YearTo5Years} age={age} DOB={data.DOB}></EditableTable> },
+    { "title": "6 years +", "content": <EditableTable vaccData={vaccine6YearsPlus} age={age} DOB={data.DOB}></EditableTable> }
 
     ]
+
+    
 
     const handleSaveVaccDet = () => {
         navigate("../Login")

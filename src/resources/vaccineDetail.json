@@ -6,7 +6,8 @@
             "adminDateStart": 0,
             "adminDateEnd": 0,
             "sideEffect": "1) soreness or discharge where the injection was given.\n 2) high temperature (fever) \n 3) headache. \n 4) swollen glands under the armpit in the arm where the injection was given.",
-            "admnstDate": ""
+            "admnstDate": "",
+            "vaccineDone": true
         },
         {
             "VaccineName": "Hepatitis B - Birth dose",
@@ -14,7 +15,8 @@
             "adminDateStart": 1,
             "adminDateEnd": 0,
             "sideEffect": "Aches or pain in the joints, fever, or skin rash or welts (may occur days or weeks after receiving the vaccine) \n blurred vision or other vision changes. \n difficulty with breathing or swallowing. \n itching, especially of the feet or hands. \n muscle weakness. \n numbness or tingling of the arms and legs.",
-            "admnstDate": ""
+            "admnstDate": "",
+            "vaccineDone": false
         },
         {
             "VaccineName": "OPV-0",
@@ -22,7 +24,8 @@
             "adminDateStart": 15,
             "adminDateEnd": 0,
             "sideEffect": "fever, irritability, malaise, and non-specific symptoms, such as diarrhea, headache, and/or muscle pain.",
-            "admnstDate": ""
+            "admnstDate": "",
+            "vaccineDone": false
         },
         {
             "VaccineName": "OPV-1",
@@ -30,7 +33,8 @@
             "adminDateStart": 42,
             "adminDateEnd": 0,
             "sideEffect": "fever, irritability, malaise, and non-specific symptoms, such as diarrhea, headache, and/or muscle pain.",
-            "admnstDate": ""
+            "admnstDate": "",
+            "vaccineDone": false
         },
         {
             "VaccineName": "Pentavalent 1",
@@ -38,7 +42,8 @@
             "adminDateStart": 42,
             "adminDateEnd": 0,
             "sideEffect": "tenderness and/or swelling at the injection site. raised temperature (fever) irritability. sickness. diarrhoea. loss of appetite.",
-            "admnstDate": ""
+            "admnstDate": "",
+            "vaccineDone": false
         },
         {
             "VaccineName": "Rotavirus",
@@ -46,7 +51,8 @@
             "adminDateStart": 42,
             "adminDateEnd": 0,
             "sideEffect": "Irritability or mild, temporary diarrhea or vomiting",
-            "admnstDate": ""
+            "admnstDate": "",
+            "vaccineDone": false
         },
         {
             "VaccineName": "IPV",
@@ -54,7 +60,8 @@
             "adminDateStart": 42,
             "adminDateEnd": 0,
             "sideEffect": "fever and soreness or redness at the site of the injection",
-            "admnstDate": ""
+            "admnstDate": "",
+            "vaccineDone": false
         },
         {
             "VaccineName": "OPV-2",
@@ -62,7 +69,8 @@
             "adminDateStart": 70,
             "adminDateEnd": 0,
             "sideEffect": "fever, irritability, malaise, and non-specific symptoms, such as diarrhea, headache, and/or muscle pain.",
-            "admnstDate": ""
+            "admnstDate": "",
+            "vaccineDone": false
         },
         {
             "VaccineName": "Pentavalent 2",
@@ -70,7 +78,8 @@
             "adminDateStart": 70,
             "adminDateEnd": 0,
             "sideEffect": "tenderness and/or swelling at the injection site. raised temperature (fever) irritability. sickness. diarrhoea. loss of appetite.",
-            "admnstDate": ""
+            "admnstDate": "",
+            "vaccineDone": false
         },
         {
             "VaccineName": "Pentavalent 3",
@@ -78,7 +87,8 @@
             "adminDateStart": 98,
             "adminDateEnd": 0,
             "sideEffect": "tenderness and/or swelling at the injection site. raised temperature (fever) irritability. sickness. diarrhoea. loss of appetite.",
-            "admnstDate": ""
+            "admnstDate": "",
+            "vaccineDone": false
         },
         {
             "VaccineName": "OPV-3",
@@ -86,7 +96,8 @@
             "adminDateStart": 98,
             "adminDateEnd": 0,
             "sideEffect": "fever, irritability, malaise, and non-specific symptoms, such as diarrhea, headache, and/or muscle pain.",
-            "admnstDate": ""
+            "admnstDate": "",
+            "vaccineDone": false
         }
     ],
     "vaccine6To12Mnth": [
@@ -96,7 +107,8 @@
             "adminDateStart": 252,
             "adminDateEnd": 0,
             "sideEffect": "mild pain and redness at the injection site, low-grade fever, rash and muscle aches",
-            "admnstDate": ""
+            "admnstDate": "",
+            "vaccineDone": false
         },
         {
             "VaccineName": "JE - 1",
@@ -104,7 +116,8 @@
             "adminDateStart": 252,
             "adminDateEnd": 0,
             "sideEffect": "Pain, tenderness, redness, or swelling where the shot was given are common after JE vaccine.",
-            "admnstDate": ""
+            "admnstDate": "",
+            "vaccineDone": false
         },
         {
             "VaccineName": "Vitamin A (1st dose)",
@@ -112,7 +125,8 @@
             "adminDateStart": 252,
             "adminDateEnd": 0,
             "sideEffect": "irritability, sleepiness, diarrhea",
-            "admnstDate": ""
+            "admnstDate": "",
+            "vaccineDone": false
         }
     ],
     "vaccine1YearTo5Years": [
@@ -122,7 +136,8 @@
             "adminDateStart": 448,
             "adminDateEnd": 0,
             "sideEffect": "Soreness or swelling where the shot was given, fever, fussiness, feeling tired, loss of appetite, and vomiting sometimes happen after DTaP vaccination.",
-            "admnstDate": ""
+            "admnstDate": "",
+            "vaccineDone": false
         },
         {
             "VaccineName": "Measles/ MR 2nd dose",
@@ -130,7 +145,8 @@
             "adminDateStart": 448,
             "adminDateEnd": 0,
             "sideEffect": "More serious reactions, such as seizures, non-stop crying for 3 hours or more, or high fever (over 105°F) after DTaP vaccination happen much less often.",
-            "admnstDate": ""
+            "admnstDate": "",
+            "vaccineDone": false
         },
         {
             "VaccineName": "OPV Booster",
@@ -138,7 +154,8 @@
             "adminDateStart": 448,
             "adminDateEnd": 0,
             "sideEffect": "fever, irritability, malaise, and non-specific symptoms, such as diarrhea, headache, and/or muscle pain.",
-            "admnstDate": ""
+            "admnstDate": "",
+            "vaccineDone": false
         },
         {
             "VaccineName": "JE-2",
@@ -146,7 +163,8 @@
             "adminDateStart": 448,
             "adminDateEnd": 0,
             "sideEffect": "fever, irritability, malaise, and non-specific symptoms, such as diarrhea, headache, and/or muscle pain.",
-            "admnstDate": ""
+            "admnstDate": "",
+            "vaccineDone": false
         },
         {
             "VaccineName": "Vitamin A (2nd Dose)",
@@ -154,7 +172,8 @@
             "adminDateStart": 448,
             "adminDateEnd": 0,
             "sideEffect": "irritability, sleepiness, diarrhea",
-            "admnstDate": ""
+            "admnstDate": "",
+            "vaccineDone": false
         }
     ],
     "vaccine6YearsPlus": [
@@ -164,7 +183,8 @@
             "adminDateStart": 1825,
             "adminDateEnd": 0,
             "sideEffect": "Soreness or swelling where the shot was given, fever, fussiness, feeling tired, loss of appetite, and vomiting sometimes happen after DTaP vaccination.",
-            "admnstDate": ""
+            "admnstDate": "",
+            "vaccineDone": false
         },
         {
             "VaccineName": "TT",
@@ -172,7 +192,8 @@
             "adminDateStart": 1825,
             "adminDateEnd": 0,
             "sideEffect": "Confusion. convulsions (seizures) fever over 103 °F (39.4 °C) headache (severe or continuing) sleepiness (excessive) swelling, blistering, or pain at place of injection (severe or continuing) swelling of glands in armpit. unusual irritability.",
-            "admnstDate": ""
+            "admnstDate": "",
+            "vaccineDone": false
         }
     ]
 }

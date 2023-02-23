@@ -7,7 +7,7 @@ import SympDialBx from './SmptmDet'
 
 
 
-const EditableTable = ({ vaccData, DOB }) => {
+const EditableTable = ({ vaccData, DOB, age }) => {
 
   let vaccDetArr = vaccData;
 
@@ -20,17 +20,35 @@ const EditableTable = ({ vaccData, DOB }) => {
   //   setVaccines([...vaccines, newVaccine]);
   //   setNewVaccine({ name: '', administered: '', due: '', done: false });
   // };
+  const getRowColor = (ageDay) => {
+    let warn = ageDay - age
+    let color = ((warn < 60) && (warn > 0)) ? "#ffffe2" : "transparent";
+  
+    const style = {
+
+      backgroundColor:  color
+
+    }
+
+    return style
+
+  }
+
 
   const handleToggleDone = (index) => {
-    const newVaccines = [...vaccines];
-    newVaccines[index].done = !newVaccines[index].done;
+    var newVaccines = [...vaccines];
+    newVaccines[index].vaccineDone = !newVaccines[index].vaccineDone;
+    newVaccines[index].administered = (newVaccines[index].vaccineDone) ? newVaccines[index].administered : "";
     setVaccines(newVaccines);
   };
 
 
 
-  const changeAdmnstDt = () => {
-
+  const changeAdmnstDt = (e, index) => {
+    var newVaccines = [...vaccines]
+    newVaccines[index].administered = e.target.value;
+    newVaccines[index].vaccineDone = (e.target.value) ? true : false;
+    setVaccines(newVaccines);
   }
 
   const addDate = (dateString, numberOfDaysToAdd) => {
@@ -51,13 +69,13 @@ const EditableTable = ({ vaccData, DOB }) => {
             <th>Vaccine Name</th>
             <th>Immunization for</th>
             <th>Due date</th>
-            <th>Administered/ Date</th>
+            <th>Vaccine Done Date</th>
             <th>side effects</th>
           </tr>
         </thead>
         <tbody>
           {vaccines.map((vaccine, index) => (
-            <tr key={index}>
+            <tr key={index} style={getRowColor(vaccine.adminDateStart)}>
               <td style={{ "verticalAlign": "middle" }}>{vaccine.VaccineName}</td>
               <td style={{ "verticalAlign": "middle" }}>{vaccine.PreventAgnst}</td>
               <td style={{ "verticalAlign": "middle" }}>{addDate(DOB, vaccine.adminDateStart)}</td>
@@ -68,11 +86,11 @@ const EditableTable = ({ vaccData, DOB }) => {
                     style={{ 'marginTop': "1.3rem", }}
                     type="switch"
                     id={`done-${index}`}
-                    label={vaccine.done ? 'Done' : 'Due'}
-                    checked={vaccine.done}
+                    label={vaccine.vaccineDone ? 'Done' : 'Due'}
+                    checked={vaccine.vaccineDone}
                     onChange={() => handleToggleDone(index)}
                   />
-                  <input type="date" className='form-control smallMargin' value={vaccine.administered} onChange={() => { changeAdmnstDt(index) }}></input>
+                  <input type="date" className='form-control smallMargin' value={vaccine.administered} onChange={(e) => { changeAdmnstDt(e, index) }}></input>
                 </div>
               </td>
               <td style={{ "verticalAlign": "middle" }}>
