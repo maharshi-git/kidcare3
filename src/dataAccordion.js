@@ -28,7 +28,7 @@ function FourTabBars({ tabs }) {
     tabs = [{ "title": "0 - 6 Months", "content": <EditableTable vaccData={vacc0To6Mnth} DOB={data.DOB}></EditableTable> },
     { "title": "6 - 12 Months", "content": <EditableTable vaccData={vaccine6To12Mnth} DOB={data.DOB}></EditableTable> },
     { "title": "1 year to 6 years", "content": <EditableTable vaccData={vaccine1YearTo5Years} DOB={data.DOB}></EditableTable> },
-    { "title": "6 years - 12 months", "content": <EditableTable vaccData={vaccine6YearsPlus} DOB={data.DOB}></EditableTable> }
+    { "title": "6 years +", "content": <EditableTable vaccData={vaccine6YearsPlus} DOB={data.DOB}></EditableTable> }
 
     ]
 
