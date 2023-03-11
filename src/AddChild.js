@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";
 
@@ -10,17 +10,33 @@ import BoyImageTile from './resources/boy.png'
 
 
 function SquareTiles() {
+  
+  let tilesOld = [];
+  //check kid exists
+  if (window.globalVars.kidDetail.length > 0) {
+    window.globalVars.kidDetail.forEach((x) => {
+      tilesOld.push(x);
+    })
+  } else {
+    //set States
+  
+    tilesOld = []
 
-  //set States
-  const [tiles, setTiles] = useState([]);
+  }
+
+  const [tiles, setTiles] = useState(tilesOld);
   const [kidName, setKidName] = useState([]);
   const [kidDOB, setKidDOB] = useState([]);
+
+
 
   //create classes
   let navigate = useNavigate()
 
   const addTile = () => {
+    window.globalVars.kidDetail.push({ "name": kidName, "DOB": kidDOB })
     setTiles([...tiles, { "name": kidName, "DOB": kidDOB }]);
+
   };
 
   //textbox functions
@@ -51,7 +67,6 @@ function SquareTiles() {
                 <div className="tileStyle text-light p-4" >
                   <img src={BoyImageTile} style={{ "width": "10rem", "height": "10rem" }} alt=""></img>
                   <p style={{ "color": "Black" }}>{tile.name} <br></br> {tile.DOB}</p>
-
                 </div>
               </button>
             </Col>

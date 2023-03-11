@@ -1,31 +1,57 @@
 import React, { useState } from "react";
+// import GoogleLogin from 'react-google-login';
+import { GoogleLogin } from '@react-oauth/google';
+
 
 import './index.css'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import { useNavigate } from "react-router-dom";
 // import { useNavigate } from 'react-router-dom';;
 
-
+// import GoogleLogin from "./googleSignin";
 
 const LoginPage = () => {
 
-    // const history = useNavigate();
+  // const history = useNavigate();
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoggingIn, setIsLoggingIn] = useState(false);
 
 
 
   let navigate = useNavigate()
 
+  // const handleSuccess = (response) => {
+  //   setIsLoggingIn(false);
+  //   console.log('Google login success:', response);
+  // };
+
+  // const handleFailure = (response) => {
+  //   setIsLoggingIn(false);
+  //   console.log('Google login failure:', response);
+  // };
+
+  // const handleOnClick = () => {
+  //   setIsLoggingIn(true);
+  // };
   //sdfsdf
 
+  const responseMessage = (response) => {
+    // console.log(response);
+    setIsLoggingIn(true);
+    alert("Logged in Successfully")
+    navigate("../")
+  };
+  const errorMessage = (error) => {
+    console.log(error);
+  };
+
   return (
-    <div  style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '90vh' }}>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '90vh' }}>
       <form >
         <h5 className="smallMargin">Login</h5>
         <div className="form-group">
-          {/* <label htmlFor="username">Username:</label> */}
           <input
             placeholder="username"
             type="text"
@@ -36,7 +62,6 @@ const LoginPage = () => {
           />
         </div>
         <div>
-          {/* <label htmlFor="password">Password:</label> */}
           <input
             placeholder="Password"
             type="password"
@@ -46,9 +71,10 @@ const LoginPage = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button  type="submit" className="btn btn-success smallMargin appButtonPurple" onClick={() => {navigate('/VaccineDet') }}>Login</button>
+        <button type="submit" className="btn btn-success smallMargin appButtonPurple" onClick={() => { navigate('/VaccineDet') }}>Login</button>
+        <GoogleLogin onSuccess={responseMessage} onError={errorMessage} />
         <div className="smallMargin">
-          <p>New user?  <button className="transparentBtn" onClick={() => {navigate('/Register') }}>Register</button></p>
+          <p>New user?  <button className="transparentBtn" onClick={() => { navigate('/Register') }}>Register</button></p>
 
         </div>
       </form>
