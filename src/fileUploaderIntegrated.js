@@ -6,11 +6,12 @@ import Dialog from "@material-ui/core/Dialog";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogActions from "@material-ui/core/DialogActions";
 import Button from "@material-ui/core/Button";
+import VaccineDetail from './resources/vaccineDetail.json'
 
 //imported images
 import VaccLogo from './resources/buffer.png';
 
-const ImageUploader = () => {
+const ImageUploader = ({vaccFunc}) => {
 
     //setState
     const [selectedFile, setSelectedFile] = useState(null);
@@ -45,14 +46,69 @@ const ImageUploader = () => {
     };
 
     //upload Button functions
-    const handleUpload = () => {
-        // Upload selected files
-        // You can use a library like Axios or fetch to upload the files to a server
-        // or use a cloud storage service like AWS S3 or Azure Blob Storage
-        // console.log(selectedFiles);
+    const handleUpload = async () => {
+
         setFileUploaded(true);
 
+        fetch('http://localhost:3000/upldVaccData', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                "previewUrl": previewUrl
+            })
+        }).then((response) => response.json())
+            .then((data) => {
+
+                console.log("Success:", data);
+
+                let finalArr = [], vaccObjFound;
+                finalArr = finalArr.concat(VaccineDetail.vaccine0To6Mnth, VaccineDetail.vaccine6To12Mnth, VaccineDetail.vaccine1YearTo5Years, VaccineDetail.vaccine6YearsPlus)
+                for (let i in finalArr) { 
+                    vaccObjFound = data.find((x) => x.COLUMN1 === finalArr[i].VaccineName)
+                    if(vaccObjFound){
+                        finalArr[i].admnstDate =vaccObjFound['Given on']
+                        finalArr[i].vaccineDone = true
+                        
+                    }
+                }
+                // console.log(finalArr)
+                finalArr.forEach(x => x.admnstDate = (x.admnstDate) ?  convertDate(x.admnstDate) : "")
+
+                vaccFunc(finalArr);
+
+                setFileUploaded(false);
+                
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+            });
+
+    
+
+        // setFileUploaded(true);
+
     };
+
+    const convertDate = (dateString) => {
+        // Split the string into day, month, and year
+        const parts = dateString.split('-');
+        const day = parts[0];
+        const month = parts[1];
+        let year = parts[2];
+        if(year.length === 2){
+            year = "20" + year
+        }
+      
+        // Use the Date constructor to create a new date object
+        const date = new Date(year, month - 1, day);
+      
+        // Use the toISOString() method to format the date in yyyy-mm-dd format
+        const formattedDate = date.toISOString().substring(0, 10);
+      
+        return formattedDate;
+      }
 
     //open uploaded data in a dialogBox
     const handleOpen = () => {
@@ -85,15 +141,15 @@ const ImageUploader = () => {
                     }}
                     onDrop={handleDrop}
                 >
-                <input type="file" multiple={false} accept="image/jpeg" onChange={handleFileChange} className="fileUploaderBtn" style={{ "marginTop": "1.3rem"}} />
+                    <input type="file" multiple={false} accept="image/jpeg" onChange={handleFileChange} className="fileUploaderBtn" style={{ "marginTop": "1.3rem" }} />
                 </div>
 
                 {previewUrl &&
-                    <button style={{ "height": "5rem", "borderRadius": "1rem", "marginLeft": "2rem", "marginRight": "1rem", "border" : "none", "boxShadow": "rgb(164 164 164) 1px 1px 1px 1px"}}>
-                        <img onClick={handleOpen}  src={previewUrl} alt="Preview" style={{ "width": "5rem" }} />
+                    <button style={{ "height": "5rem", "borderRadius": "1rem", "marginLeft": "2rem", "marginRight": "1rem", "border": "none", "boxShadow": "rgb(164 164 164) 1px 1px 1px 1px" }}>
+                        <img onClick={handleOpen} src={previewUrl} alt="Preview" style={{ "width": "5rem" }} />
                     </button>}
 
-                <button hidden={(!selectedFile)} style={{"marginLeft": "1rem"}} onClick={handleUpload} className='btn btn-success appButtonPurple'>Upload</button>
+                <button hidden={(!selectedFile)} style={{ "marginLeft": "1rem" }} onClick={handleUpload} className='btn btn-success appButtonPurple'>Upload</button>
             </div>
             <Dialog open={open} onClose={handleClose} >
                 {/* <DialogTitle>{props.VaccineName}</DialogTitle> */}

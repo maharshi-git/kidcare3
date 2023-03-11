@@ -90,7 +90,7 @@ const EditableTable = ({ vaccData, DOB, age }) => {
                     checked={vaccine.vaccineDone}
                     onChange={() => handleToggleDone(index)}
                   />
-                  <input type="date" className='form-control smallMargin' value={vaccine.administered} onChange={(e) => { changeAdmnstDt(e, index) }}></input>
+                  <input type="date" className='form-control smallMargin' value={vaccine.admnstDate} onChange={(e) => { changeAdmnstDt(e, index) }}></input>
                 </div>
               </td>
               <td style={{ "verticalAlign": "middle" }}>

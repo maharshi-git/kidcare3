@@ -7,7 +7,7 @@ import TabBar from './dataAccordion';
 import AddChild from './AddChild';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-
+//main application
 const App = () => {
 
   window.globalVars = {"kidDetail" : []};
