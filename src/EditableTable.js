@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Table, Form } from 'react-bootstrap';
+import {MyContext} from './App'
+// import {MyContext} from './App'
 // import { useNavigate } from "react-router-dom";
 
 //components
@@ -12,14 +14,15 @@ const EditableTable = ({ vaccData, DOB, age }) => {
   let vaccDetArr = vaccData;
 
   const [vaccines, setVaccines] = useState(vaccDetArr);
+  const {activeTab} = useContext(MyContext);
+  const { tiles } = useContext(MyContext);
+  const {selectedTile } = useContext(MyContext);
+  
+  // useEffect(() => {
+  //   setVaccines(vaccDetArr)
+  // }, [])
 
-  // let navigate = useNavigate()
 
-  // const handleAddVaccine = (event) => {
-  //   event.preventDefault();
-  //   setVaccines([...vaccines, newVaccine]);
-  //   setNewVaccine({ name: '', administered: '', due: '', done: false });
-  // };
   const getRowColor = (ageDay) => {
     let warn = ageDay - age
     let color = ((warn < 60) && (warn > 0)) ? "#ffffe2" : "transparent";
@@ -48,7 +51,28 @@ const EditableTable = ({ vaccData, DOB, age }) => {
     var newVaccines = [...vaccines]
     newVaccines[index].administered = e.target.value;
     newVaccines[index].vaccineDone = (e.target.value) ? true : false;
+
+    switch(activeTab){
+      case 1:
+        tiles.find(x => x.name === selectedTile.name).vaccDetail.vacc0To6Mnth = newVaccines
+        break;
+      case 2:
+        tiles.find(x => x.name === selectedTile.name).vaccDetail.vaccine6To12Mnth = newVaccines
+        break;
+      case 3:
+        tiles.find(x => x.name === selectedTile.name).vaccDetail.vaccine1YearTo5Years = newVaccines
+        break;
+      case 4:
+        tiles.find(x => x.name === selectedTile.name).vaccDetail.vaccine6YearsPlus = newVaccines
+        break;
+      default:
+        tiles.find(x => x.name === selectedTile.name).vaccDetail.vacc0To6Mnth = newVaccines
+        break;
+    }
+
     setVaccines(newVaccines);
+
+    
   }
 
   const addDate = (dateString, numberOfDaysToAdd) => {
@@ -90,7 +114,7 @@ const EditableTable = ({ vaccData, DOB, age }) => {
                     checked={vaccine.vaccineDone}
                     onChange={() => handleToggleDone(index)}
                   />
-                  <input type="date" className='form-control smallMargin' value={vaccine.admnstDate} onChange={(e) => { changeAdmnstDt(e, index) }}></input>
+                  <input type="date" className='form-control smallMargin' value={vaccine.administered} onChange={(e) => { changeAdmnstDt(e, index) }}></input>
                 </div>
               </td>
               <td style={{ "verticalAlign": "middle" }}>

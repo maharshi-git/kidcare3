@@ -56,13 +56,15 @@
 
 import React, { useState } from 'react';
 import { Container, Form, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function RegistrationForm() {
   const [name, setName] = useState('');
   const [address, setAddress] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -72,24 +74,24 @@ function RegistrationForm() {
   return (
     <Container>
       <Form onSubmit={handleSubmit}>
-        <Form.Group controlId="name">
-          <Form.Label>Name:</Form.Label>
+        <Form.Group controlId="name" style={{display: "flex", marginBottom: "1rem"}}>
+          <Form.Label style={{marginTop: "3px", width: "5rem", marginRight: "1rem"}}>Name:</Form.Label>
           <Form.Control type="text" value={name} onChange={(e) => setName(e.target.value)} />
         </Form.Group>
-        <Form.Group controlId="address">
-          <Form.Label>Address:</Form.Label>
+        <Form.Group controlId="address" style={{display: "flex", marginBottom: "1rem"}}>
+          <Form.Label style={{marginTop: "3px", width: "5rem", marginRight: "1rem"}}>Address:</Form.Label>
           <Form.Control type="text" value={address} onChange={(e) => setAddress(e.target.value)} />
         </Form.Group>
-        <Form.Group controlId="phone">
-          <Form.Label>Phone:</Form.Label>
+        <Form.Group controlId="phone" style={{display: "flex", marginBottom: "1rem"}}>
+          <Form.Label style={{marginTop: "3px", width: "5rem", marginRight: "1rem"}}>Phone:</Form.Label>
           <Form.Control type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} />
         </Form.Group>
-        <Form.Group controlId="email">
-          <Form.Label>Email:</Form.Label>
+        <Form.Group controlId="email" style={{display: "flex", marginBottom: "1rem"}}>
+          <Form.Label style={{marginTop: "3px", width: "5rem", marginRight: "1rem"}}>Email:</Form.Label>
           <Form.Control type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
         </Form.Group>
         <Button type="submit" variant="primary" className='smallMargin appButtonPurple'>Register</Button>
-        <p className='smallMargin'>Already have an account? <Link to="/Login">Login</Link></p>
+        <p className='smallMargin'>Already have an account? <button className="transparentBtn" onClick={() => {navigate("../Login")}}>Login</button></p>
       </Form>
     </Container>
   );

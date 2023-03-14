@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
 //modules for dialog
 import Dialog from "@material-ui/core/Dialog";
@@ -7,6 +7,7 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogActions from "@material-ui/core/DialogActions";
 import Button from "@material-ui/core/Button";
 import VaccineDetail from './resources/vaccineDetail.json'
+import {MyContext} from './App'
 
 //imported images
 import VaccLogo from './resources/buffer.png';
@@ -14,11 +15,19 @@ import VaccLogo from './resources/buffer.png';
 const ImageUploader = ({vaccFunc}) => {
 
     //setState
-    const [selectedFile, setSelectedFile] = useState(null);
-    const [previewUrl, setPreviewUrl] = useState(null);
+    // const [selectedFile, setSelectedFile] = useState(null);
+    // const [previewUrl, setPreviewUrl] = useState(null);
     const [open, setOpen] = useState(false);
-    const [fileUploaded, setFileUploaded] = useState(false);
+    
+    // const [fileUploaded, setFileUploaded] = useState(false);
 
+    const {selectedFile, setSelectedFile, previewUrl, setPreviewUrl, fileUploaded, setFileUploaded } = useContext(MyContext);
+    const { tiles } = useContext(MyContext);
+    const {selectedTile } = useContext(MyContext);
+
+    // if(selectedTile.fileDetail){
+    //     setSelectedFile(selectedTile.fileDetail.fileDet)
+    // }
 
     const handleFileChange = (event) => {
         const file = event.target.files[0];
@@ -28,6 +37,11 @@ const ImageUploader = ({vaccFunc}) => {
         const reader = new FileReader();
         reader.readAsDataURL(file);
         reader.onload = () => {
+
+            tiles.find(x => x.name === selectedTile.name).fileDetail = {
+                fileDet : file
+            }
+
             setPreviewUrl(reader.result);
         };
     };
@@ -41,6 +55,11 @@ const ImageUploader = ({vaccFunc}) => {
         const reader = new FileReader();
         reader.readAsDataURL(file);
         reader.onload = () => {
+
+            tiles.find(x => x.name === selectedTile.name).fileDetail = {
+                fileDet : file
+            }
+
             setPreviewUrl(reader.result);
         };
     };
@@ -50,7 +69,10 @@ const ImageUploader = ({vaccFunc}) => {
 
         setFileUploaded(true);
 
-        fetch('http://localhost:3000/upldVaccData', {
+        // fetch('http://localhost:3000/upldVaccData', {
+        let currentUrl = window.location.origin;
+
+        fetch(`${currentUrl}/users`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
